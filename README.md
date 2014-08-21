@@ -1,12 +1,12 @@
-# Developer Dashboard
+# Server Dashboard
 
-A developer dashboard for WordPress
+A server dashboard for WordPress
 
 - [GitHub repo](https://github.com/richjenks/wp-dev-dash)
-- [Plugin page](https://richjenks.com/dev/wp/developer-dashboard/)
+- [Plugin page](https://richjenks.com/dev/wp/server-dashboard/)
 
 ## Usage
 
-`WP Admin > Tools > Dev Dash`
+`WP Admin > Tools > Server`
 
 No setup, no options, just dashboard.

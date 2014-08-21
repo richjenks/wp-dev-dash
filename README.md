@@ -2,7 +2,7 @@
 
 A server dashboard for WordPress
 
-- [GitHub repo](https://github.com/richjenks/wp-dev-dash)
+- [GitHub repo](https://github.com/richjenks/wp-server-dashboard)
 - [Plugin page](https://richjenks.com/dev/wp/server-dashboard/)
 
 ## Usage

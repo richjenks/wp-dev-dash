@@ -1,0 +1,35 @@
+table,
+.nav-tab-wrapper {
+	margin-bottom: 1em !important;
+}
+
+table {
+	border-collapse: collapse;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 2em;
+}
+
+th,
+caption {
+	text-align: left;
+}
+
+td,
+th,
+caption {
+	padding: .5em;
+}
+
+caption {
+	font-weight: bold;
+}
+
+th {
+	background: #e4e4e4;
+}
+
+td,
+th {
+	border: 1px solid #ccc;
+}

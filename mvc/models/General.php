@@ -32,12 +32,12 @@ class General {
 	}
 
 	/**
-	 * get_general_data
+	 * get_data
 	 *
 	 * @return array Data for General tab
 	 */
 
-	public function get_general_data() {
+	public function get_data() {
 		return array(
 
 			array(

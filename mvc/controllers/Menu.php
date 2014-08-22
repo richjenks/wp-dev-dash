@@ -9,12 +9,6 @@ namespace  RichJenks\WPServerInfo\Controllers;
 class Menu extends Controller {
 
 	/**
-	 * @var object Menu Model object
-	 */
-
-	private $menu;
-
-	/**
 	 * __construct
 	 *
 	 * Gets menu data and renders menu
@@ -23,8 +17,8 @@ class Menu extends Controller {
 	 */
 
 	public function __construct() {
-		$this->menu = new \RichJenks\WPServerInfo\Models\Menu;
-		$this->render( 'Menu', $this->menu->get_menu_data() );
+		$menu = new \RichJenks\WPServerInfo\Models\Menu;
+		$this->render( 'Menu', $menu->get_menu_data() );
 	}
 
 	/**

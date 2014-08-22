@@ -9,7 +9,8 @@ namespace  RichJenks\WPServerInfo\Controllers;
 class Apache extends Controller {
 
 	public function __construct() {
-		$this->render( 'Apache' );
+		$apache = new \RichJenks\WPServerInfo\Models\Apache;
+		$this->render( 'Apache', $apache->get_data() );
 	}
 
 }

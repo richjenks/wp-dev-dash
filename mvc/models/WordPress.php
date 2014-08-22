@@ -17,12 +17,12 @@ class WordPress {
 	private $wp_config;
 
 	/**
-	 * get_wordpress_data
+	 * get_data
 	 *
 	 * @return array Data for WordPress tab
 	 */
 
-	public function get_wordpress_data() {
+	public function get_data() {
 
 		// Get `wp-config.php` contents
 		$config = file_get_contents( ABSPATH . 'wp-config.php' );

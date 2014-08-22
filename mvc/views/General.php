@@ -1,1 +1,0 @@
-<?php require __DIR__ . DS . 'partials' . DS . 'Tables.php';

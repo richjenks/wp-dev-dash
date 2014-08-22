@@ -10,6 +10,6 @@ class General extends Controller {
 
 	public function __construct() {
 		$general = new \RichJenks\WPServerInfo\Models\General;
-		$this->render( 'General', $general->get_data() );
+		$this->render( 'Tab', $general->get_data() );
 	}
 }

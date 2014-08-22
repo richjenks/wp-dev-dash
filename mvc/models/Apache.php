@@ -23,12 +23,10 @@ class Apache {
 				'caption' => 'Versions',
 				'data'  => array(
 					'WordPress' => $GLOBALS['wp_version'],
-					'WP DB'     => $GLOBALS['wp_db_version'],
-					'Apache'    => $this->get_apache_version(),
-					'MySQL'     => $this->get_mysql_version(),
-					'PHP'       => phpversion(),
-					'Memcache'  => ( class_exists('Memcache') ) ? Memcache::getVersion() : 'N/A',
 				),
 			),
+
+		);
+	}
 
 }

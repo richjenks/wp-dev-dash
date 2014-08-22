@@ -12,12 +12,6 @@ namespace  RichJenks\WPServerInfo;
 class Router {
 
 	/**
-	 * @var string Current tab/view
-	 */
-
-	private $current_tab;
-
-	/**
 	 * __construct
 	 *
 	 * Add submenu page for plugin
@@ -48,17 +42,21 @@ class Router {
 
 	public function route() {
 
-		// Show title - hardcoded here for simplicity
-		echo '<h1>Server Info</h1>';
+		// All tabs
+		$GLOBALS['tabs'] = array(
+			'General',
+			'WordPress',
+			'Apache',
+			'MySQL',
+			'PHP',
+			'Report',
+		);
 
-		// Instantiate Menu Controller & show menu
-		$menu = new \RichJenks\WPServerInfo\Controllers\Menu;
-
-		// Get the current tab
-		$this->current_tab = $menu->get_current_tab();
+		// Current tab
+		$GLOBALS['tab'] = ( isset( $_GET['tab'] ) && in_array( $_GET['tab'], $GLOBALS['tabs'] ) ) ? $_GET['tab'] : $GLOBALS['tabs'][0];
 
 		// Route to correct Tab Controller
-		$class = '\RichJenks\WPServerInfo\Controllers\\' . $this->current_tab;
+		$class = '\RichJenks\WPServerInfo\Controllers\\' . $GLOBALS['tab'];
 		new $class;
 
 	}

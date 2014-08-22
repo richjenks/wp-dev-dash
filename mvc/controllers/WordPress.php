@@ -10,7 +10,7 @@ class WordPress extends Controller {
 
 	public function __construct() {
 		$wordpress = new \RichJenks\WPServerInfo\Models\WordPress;
-		$this->render( 'WordPress', $wordpress->get_data() );
+		$this->render( 'Tab', $wordpress->get_data() );
 	}
 
 }

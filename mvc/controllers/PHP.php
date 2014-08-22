@@ -9,7 +9,7 @@ namespace  RichJenks\WPServerInfo\Controllers;
 class PHP extends Controller {
 
 	public function __construct() {
-		$this->render( 'PHP' );
+		$this->render( 'Tab' );
 	}
 
 }

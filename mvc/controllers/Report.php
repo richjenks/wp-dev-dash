@@ -9,9 +9,15 @@ namespace  RichJenks\WPServerInfo\Controllers;
 class Report extends Controller {
 
 	public function __construct() {
-		$dashboard = new \RichJenks\WPServerInfo\Models\Dashboard;
-		$data['General'] = $dashboard->get_dashboard_data();
+
+		$general = new \RichJenks\WPServerInfo\Models\General;
+		$data['General'] = $general->get_general_data();
+
+		$general = new \RichJenks\WPServerInfo\Models\WordPress;
+		$data['WordPress'] = $general->get_wordpress_data();
+
 		$this->render( 'Report', $data );
+
 	}
 
 }

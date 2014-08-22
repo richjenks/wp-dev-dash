@@ -10,8 +10,11 @@ namespace  RichJenks\WPServerInfo\Models;
 
 class WordPress {
 
-	public function __construct() {
-	}
+	/**
+	 * @var array Constants & variables defined in `wp-config.php`
+	 */
+
+	private $wp_config;
 
 	/**
 	 * get_wordpress_data
@@ -20,20 +23,102 @@ class WordPress {
 	 */
 
 	public function get_wordpress_data() {
+
+		// Get `wp-config.php` contents
+		$config = file_get_contents( ABSPATH . 'wp-config.php' );
+
+		// Get constants & variables
+		$constants = $this->get_constants_from_config( $config );
+		$variables = $this->get_variables_from_config( $config );
+		$this->wp_config = array_merge( $constants, $variables );
+
 		return array(
 
 			array(
-				'caption' => 'Versions',
-				'data'  => array(
-					'WordPress' => $GLOBALS['wp_version'],
-					'WP DB'     => $GLOBALS['wp_db_version'],
-					'Apache'    => '$this->get_apache_version()',
-					'MySQL'     => '$this->get_mysql_version()',
-					'PHP'       => phpversion(),
-				),
+				'caption' => 'WP Config',
+				'data'  => $this->wp_config,
 			),
 
 		);
+	}
+
+	/**
+	 * get_constants_from_config
+	 *
+	 * When passed the contents of a `wp-config.php` file
+	 * returns an array of Constants and their values
+	 *
+	 * @param string $config wp-config.php contents
+	 * @return array Constants and their values
+	 */
+
+	private function get_constants_from_config( $config ) {
+
+		// Get lines
+		$lines = explode( "\n", $config );
+
+		// Reset $config
+		$config = array();
+
+		// Constants to ignore
+		$keys_salts = array(
+			'AUTH_KEY',
+			'SECURE_AUTH_KEY',
+			'LOGGED_IN_KEY',
+			'NONCE_KEY',
+			'AUTH_SALT',
+			'SECURE_AUTH_SALT',
+			'LOGGED_IN_SALT',
+			'NONCE_SALT',
+		);
+
+		// Iterate through lines & get constant definitions
+		foreach ( $lines as $line ) {
+			if ( substr( trim( $line ), 0, 7 ) === 'define(' ) {
+
+				$parts = explode( '\'', $line );
+
+				// Ignore keys & salts
+				if ( !in_array( $parts[1], $keys_salts ) ) {
+					$config[ $parts[1] ] = constant( $parts[1] );
+				}
+
+			}
+		}
+
+		return $config;
+
+	}
+
+	/**
+	 * get_variables_from_config
+	 *
+	 * When passed the contents of a `wp-config.php` file
+	 * returns an array of variables and their values
+	 *
+	 * @param string $config wp-config.php contents
+	 * @return array Variables and their values
+	 */
+
+	private function get_variables_from_config( $config ) {
+
+		// Get lines
+		$lines = explode( "\n", $config );
+
+		// Reset $config
+		$config = array();
+
+		// Iterate through lines
+		foreach ( $lines as $line ) {
+			if ( substr( $line, 0, 1 ) === '$' ) {
+				$parts = explode( '=', $line );
+				$var = str_replace( '$', '', trim( $parts[0] ) );
+				$config[ $var ] = $GLOBALS[ $var ];
+			}
+		}
+
+		return $config;
+
 	}
 
 }

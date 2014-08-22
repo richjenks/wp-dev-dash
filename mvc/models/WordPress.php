@@ -35,8 +35,8 @@ class WordPress {
 		return array(
 
 			array(
-				'caption' => 'WP Config',
-				'data'  => $this->wp_config,
+				'caption' => 'wp-config.php',
+				'data'  => $this->format_vars( $this->wp_config ),
 			),
 
 		);
@@ -119,6 +119,26 @@ class WordPress {
 
 		return $config;
 
+	}
+
+	/**
+	 * format_vars
+	 *
+	 * Makes variables display nicely
+	 * Currently just covers bools
+	 *
+	 * @param array $config Associative array of values to format
+	 * @return array $config but with values formatted nicely
+	 */
+
+	private function format_vars( $config ) {
+		foreach ( $config as $key => $value ) {
+			if ( is_bool( $value ) ) {
+				$value = ( $value ) ? 'true' : 'false';
+				$config[ $key ] = '<i>' . $value . '</i>';
+			}
+		}
+		return $config;
 	}
 
 }

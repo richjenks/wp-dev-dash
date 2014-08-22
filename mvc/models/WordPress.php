@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Dashboard Model
+ * WordPress Model
  *
- * Constructs Dashboard data
+ * Constructs WordPress data
  */
 
 namespace  RichJenks\WPServerDashboard\Models;
 
-class Dashboard {
+class WordPress {
 
 	/**
 	 * @var string Path to root of server disk drive

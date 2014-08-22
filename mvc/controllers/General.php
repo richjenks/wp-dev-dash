@@ -4,7 +4,7 @@
  * General Controller
  */
 
-namespace  RichJenks\WPServerInfo\Controllers;
+namespace RichJenks\WPServerInfo\Controllers;
 
 class General extends Controller {
 

@@ -10,7 +10,7 @@
  * License: GPL2
  */
 
-namespace  RichJenks\WPServerInfo;
+namespace RichJenks\WPServerInfo;
 if ( !defined( 'DS' ) ) define ( 'DS', DIRECTORY_SEPARATOR );
 require __DIR__ . DS . 'autoloader.php';
 require __DIR__ . DS . 'mvc' . DS . 'Router.php';

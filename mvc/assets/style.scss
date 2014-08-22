@@ -1,0 +1,59 @@
+#server-info {
+
+	table {
+		border-collapse: collapse;
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 2em;
+		max-width: 33%;
+	}
+
+	table,
+	.nav-tab-wrapper {
+		margin-bottom: 1em;
+	}
+
+	th,
+	caption {
+		text-align: left;
+	}
+
+	td,
+	th,
+	caption {
+		padding: .5em;
+	}
+
+	caption {
+		font-weight: bold;
+	}
+
+	th {
+		background: #e4e4e4;
+		vertical-align: top;
+	}
+
+	td {
+		word-break: break-all;
+	}
+
+	td,
+	th {
+		border: 1px solid #ccc;
+	}
+
+	pre {
+		margin: 0;
+	}
+
+	ul,
+	ol {
+		margin: 0;
+	}
+
+	ul {
+		padding-left: 2em;
+		list-style-type: disc;
+	}
+
+}

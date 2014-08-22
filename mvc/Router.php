@@ -7,7 +7,7 @@
  * Registers menu page & sends the request to the appropriate Controller
  */
 
-namespace  RichJenks\WPServerInfo;
+namespace RichJenks\WPServerInfo;
 
 class Router {
 

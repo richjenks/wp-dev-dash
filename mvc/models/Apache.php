@@ -6,7 +6,7 @@
  * Constructs Apache data
  */
 
-namespace  RichJenks\WPServerInfo\Models;
+namespace RichJenks\WPServerInfo\Models;
 
 class Apache {
 
@@ -20,9 +20,20 @@ class Apache {
 		return array(
 
 			array(
-				'caption' => 'Versions',
 				'data'  => array(
-					'WordPress' => $GLOBALS['wp_version'],
+					'Modules' => apache_get_modules(),
+				),
+			),
+
+			array(
+				'data'  => array(
+					'Request' => apache_request_headers(),
+				),
+			),
+
+			array(
+				'data'  => array(
+					'Response' => apache_response_headers(),
 				),
 			),
 

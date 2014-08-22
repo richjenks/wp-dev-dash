@@ -11,6 +11,27 @@ namespace  RichJenks\WPServerDashboard\Models;
 class Dashboard {
 
 	/**
+	 * @var string Path to root of server disk drive
+	 */
+
+	private $drive_root;
+
+	/**
+	 * @var array Disk usage stats
+	 */
+
+	private $disk_stats;
+
+	public function __construct() {
+		$this->drive_root = $this->get_drive_root();
+		$this->disk_stats['total'] = disk_total_space( $this->drive_root );
+		$this->disk_stats['free'] = disk_free_space( $this->drive_root );
+		$this->disk_stats['used'] = $this->disk_stats['total'] - $this->disk_stats['free'];
+		$this->disk_stats['free_percent'] = round( ( 100 / $this->disk_stats['total'] ) * $this->disk_stats['free'] );
+		$this->disk_stats['used_percent'] = round( 100 - $this->disk_stats['free_percent'] );
+	}
+
+	/**
 	 * get_dashboard_data
 	 *
 	 * @return array Data for Dashboard tab
@@ -44,9 +65,9 @@ class Dashboard {
 			array(
 				'caption' => 'Disk',
 				'data'  => array(
-					'Total' => $this->filesize( disk_total_space( $this->get_drive_root() ) ) ,
-					'Used'  => $this->filesize( disk_total_space( $this->get_drive_root() ) - disk_free_space( $this->get_drive_root() ) ) ,
-					'Free'  => $this->filesize( disk_free_space( $this->get_drive_root() ) ) ,
+					'Total' => $this->filesize( $this->disk_stats['total'] ),
+					'Used'  => $this->filesize( $this->disk_stats['free'] ) . ' (' . $this->disk_stats['free_percent'] . '%)',
+					'Free'  => $this->filesize( $this->disk_stats['used'] ) . ' (' . $this->disk_stats['used_percent'] . '%)',
 				),
 			),
 

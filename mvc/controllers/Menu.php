@@ -4,7 +4,7 @@
  * Menu Controller
  */
 
-namespace  RichJenks\WPServerDashboard\Controllers;
+namespace  RichJenks\WPServerInfo\Controllers;
 
 class Menu extends Controller {
 
@@ -23,7 +23,7 @@ class Menu extends Controller {
 	 */
 
 	public function __construct() {
-		$this->menu = new \RichJenks\WPServerDashboard\Models\Menu;
+		$this->menu = new \RichJenks\WPServerInfo\Models\Menu;
 		$this->render( 'Menu', $this->menu->get_menu_data() );
 	}
 

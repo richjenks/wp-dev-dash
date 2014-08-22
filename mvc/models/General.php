@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Dashboard Model
+ * General Model
  *
- * Constructs Dashboard data
+ * Constructs General data
  */
 
-namespace  RichJenks\WPServerDashboard\Models;
+namespace  RichJenks\WPServerInfo\Models;
 
-class Dashboard {
+class General {
 
 	/**
 	 * @var string Path to root of server disk drive
@@ -32,12 +32,12 @@ class Dashboard {
 	}
 
 	/**
-	 * get_dashboard_data
+	 * get_general_data
 	 *
-	 * @return array Data for Dashboard tab
+	 * @return array Data for General tab
 	 */
 
-	public function get_dashboard_data() {
+	public function get_general_data() {
 		return array(
 
 			array(
@@ -48,6 +48,7 @@ class Dashboard {
 					'Apache'    => $this->get_apache_version(),
 					'MySQL'     => $this->get_mysql_version(),
 					'PHP'       => phpversion(),
+					'Memcache'  => ( class_exists('Memcache') ) ? Memcache::getVersion() : 'N/A',
 				),
 			),
 

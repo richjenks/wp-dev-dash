@@ -7,7 +7,7 @@
  * Registers menu page & sends the request to the appropriate Controller
  */
 
-namespace  RichJenks\WPServerDashboard;
+namespace  RichJenks\WPServerInfo;
 
 class Router {
 
@@ -27,13 +27,13 @@ class Router {
 
 		// Add submenu page
 		add_action( 'admin_menu', function() {
-			add_submenu_page( 'tools.php', 'Server Dashboard', 'Server', 'manage_options', 'server-dashboard', array( $this, 'route' ) );
+			add_submenu_page( 'tools.php', 'Server Info', 'Server Info', 'manage_options', 'server-info', array( $this, 'route' ) );
 		} );
 
 		// Enqueue admin stylesheet
-		if ( isset( $_GET['page'] ) && $_GET['page'] === 'server-dashboard' ) {
+		if ( isset( $_GET['page'] ) && $_GET['page'] === 'server-info' ) {
 			add_action( 'admin_enqueue_scripts', function() {
-				wp_enqueue_style( 'devdash-styles', plugins_url( 'wp-server-dashboard/mvc/assets/style.css' ) );
+				wp_enqueue_style( 'devdash-styles', plugins_url( 'wp-server-info/mvc/assets/style.css' ) );
 			} );
 		}
 
@@ -49,16 +49,16 @@ class Router {
 	public function route() {
 
 		// Show title - hardcoded here for simplicity
-		echo '<h1>Server Dashboard</h1>';
+		echo '<h1>Server Info</h1>';
 
 		// Instantiate Menu Controller & show menu
-		$menu = new \RichJenks\WPServerDashboard\Controllers\Menu;
+		$menu = new \RichJenks\WPServerInfo\Controllers\Menu;
 
 		// Get the current tab
 		$this->current_tab = $menu->get_current_tab();
 
 		// Route to correct Tab Controller
-		$class = '\RichJenks\WPServerDashboard\Controllers\\' . $this->current_tab;
+		$class = '\RichJenks\WPServerInfo\Controllers\\' . $this->current_tab;
 		new $class;
 
 	}

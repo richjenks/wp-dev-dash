@@ -6,7 +6,7 @@
  * Constructs the menu tabs
  */
 
-namespace  RichJenks\WPServerDashboard\Models;
+namespace  RichJenks\WPServerInfo\Models;
 
 class Menu {
 
@@ -29,7 +29,7 @@ class Menu {
 
 		// Set hard-coded tabs (values must match Views)
 		$this->menu_data['tabs'] = array(
-			'Dashboard',
+			'General',
 			'WordPress',
 			'Apache',
 			'MySQL',

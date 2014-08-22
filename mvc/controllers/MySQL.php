@@ -4,7 +4,7 @@
  * MySQL Controller
  */
 
-namespace  RichJenks\WPServerDashboard\Controllers;
+namespace  RichJenks\WPServerInfo\Controllers;
 
 class MySQL extends Controller {
 

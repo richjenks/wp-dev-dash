@@ -4,7 +4,7 @@
  * Apache Controller
  */
 
-namespace  RichJenks\WPServerDashboard\Controllers;
+namespace  RichJenks\WPServerInfo\Controllers;
 
 class Apache extends Controller {
 

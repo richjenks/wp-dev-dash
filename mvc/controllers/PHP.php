@@ -4,7 +4,7 @@
  * PHP Controller
  */
 
-namespace  RichJenks\WPServerDashboard\Controllers;
+namespace  RichJenks\WPServerInfo\Controllers;
 
 class PHP extends Controller {
 

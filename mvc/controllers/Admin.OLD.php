@@ -1,6 +1,6 @@
 <?php
 
-namespace  RichJenks\WPServerDashboard\Controllers;
+namespace  RichJenks\WPServerInfo\Controllers;
 
 class Admin {
 

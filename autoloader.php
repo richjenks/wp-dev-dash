@@ -4,12 +4,12 @@
  * Autoloader
  */
 
-namespace RichJenks\WPServerDashboard;
+namespace RichJenks\WPServerInfo;
 
 spl_autoload_register( function( $class ) {
 
 	// Namespace base
-	$namespace = 'RichJenks\WPServerDashboard\\';
+	$namespace = 'RichJenks\WPServerInfo\\';
 
 	// Only run if calling a class in this plugin
 	if ( substr( $class, 0, strlen( $namespace ) ) === $namespace ) {

@@ -22,6 +22,9 @@ class Report extends Controller {
 		$mysql = new \RichJenks\WPServerInfo\Models\MySQL;
 		$data['MySQL'] = $mysql->get_data();
 
+		$php = new \RichJenks\WPServerInfo\Models\PHP;
+		$data['PHP'] = $php->get_data();
+
 		$this->render( 'Report', $data );
 
 	}

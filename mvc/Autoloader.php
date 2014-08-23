@@ -21,7 +21,7 @@ spl_autoload_register( function( $class ) {
 		$class = str_replace( '\\', DS, $class );
 
 		// Construct full path
-		$file = __DIR__ . DS . 'mvc' . DS . $class . '.php';
+		$file = __DIR__ . DS . $class . '.php';
 
 		// If file exists, require it
 		if ( file_exists( $file ) ) require_once $file;

@@ -41,6 +41,19 @@ class General {
 		return array(
 
 			array(
+				'caption' => 'Server',
+				'data'  => array(
+					'OS'            => $this->get_operating_system(),
+					'Hostname'      => $_SERVER['HTTP_HOST'],
+					'IP Address'    => $_SERVER['SERVER_ADDR'],
+					'Port'          => $_SERVER['SERVER_PORT'],
+					'Document Root' => \RichJenks\WPServerInfo\Helper::fix_separators( $_SERVER['DOCUMENT_ROOT'] ),
+					'php.ini'       => \RichJenks\WPServerInfo\Helper::fix_separators( php_ini_loaded_file() ),
+					'WordPress'     => \RichJenks\WPServerInfo\Helper::fix_separators( realpath( __DIR__ . '/../../../../../' ) ),
+				),
+			),
+
+			array(
 				'caption' => 'Versions',
 				'data'  => array(
 					'WordPress' => $GLOBALS['wp_version'],
@@ -49,17 +62,6 @@ class General {
 					'MySQL'     => $this->get_mysql_version(),
 					'PHP'       => phpversion(),
 					'Memcache'  => ( class_exists('Memcache') ) ? Memcache::getVersion() : false,
-				),
-			),
-
-			array(
-				'caption' => 'Server',
-				'data'  => array(
-					'OS'         => $this->get_operating_system(),
-					'Hostname'   => $_SERVER['HTTP_HOST'],
-					'IP Address' => $_SERVER['SERVER_ADDR'],
-					'Port'       => $_SERVER['SERVER_PORT'],
-					'Path'       => $_SERVER['DOCUMENT_ROOT'],
 				),
 			),
 

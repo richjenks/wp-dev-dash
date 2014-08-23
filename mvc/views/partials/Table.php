@@ -5,7 +5,7 @@
 	<?php foreach ( $table['data'] as $key => $val ): ?>
 		<tr>
 			<th><?=$key;?></th>
-			<td><?=RichJenks\WPServerInfo\Helpers\View::prettify( $val );?></td>
+			<td><?=RichJenks\WPServerInfo\Helper::prettify( $val );?></td>
 		</tr>
 	<?php endforeach; ?>
 </table>

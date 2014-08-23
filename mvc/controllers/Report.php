@@ -19,6 +19,9 @@ class Report extends Controller {
 		$apache = new \RichJenks\WPServerInfo\Models\Apache;
 		$data['Apache'] = $apache->get_data();
 
+		$mysql = new \RichJenks\WPServerInfo\Models\MySQL;
+		$data['MySQL'] = $mysql->get_data();
+
 		$this->render( 'Report', $data );
 
 	}

@@ -87,7 +87,7 @@ class MySQL {
 		// Highlight default tables
 		foreach ( $tables as $key => $table ) {
 			if ( in_array( $table, $defaults ) ) {
-				$tables[ $key ] = '<b><i>' . $table . '</i></b>';
+				$tables[ $key ] = '<b>' . $table . '</b>';
 			}
 		}
 

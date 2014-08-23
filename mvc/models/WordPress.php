@@ -35,8 +35,32 @@ class WordPress {
 		return array(
 
 			array(
+				'caption' => 'Plugins',
+				'data'    => array(
+					'Plugins' => get_option( 'active_plugins', '' ),
+				),
+			),
+
+			array(
 				'caption' => 'wp-config.php',
-				'data'  => $this->wp_config,
+				'data'    => $this->wp_config,
+			),
+
+			array(
+				'caption' => 'Options',
+				'data'    => array(
+					'Site URL'    => get_option( 'siteurl', '' ),
+					'Home'        => get_option( 'home', '' ),
+					'Admin Email' => get_option( 'admin_email', '' ),
+					'Theme'       => get_option( 'current_theme', '' ),
+					'Mail URL'    => get_option( 'mailserver_url', '' ),
+					'Mail Login'  => get_option( 'mailserver_login', '' ),
+					'Mail Pass'   => get_option( 'mailserver_pass', '' ),
+					'Mail Port'   => get_option( 'mailserver_port', '' ),
+					'Permalinks'  => get_option( 'permalink_structure', '' ),
+					'GZip'        => get_option( 'gzipcompression', '' ),
+					'Charset'     => get_option( 'blog_charset', '' ),
+				),
 			),
 
 		);

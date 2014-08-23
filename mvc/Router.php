@@ -43,20 +43,21 @@ class Router {
 	public function route() {
 
 		// All tabs
-		$GLOBALS['tabs'] = array(
-			'General',
-			'WordPress',
-			'Apache',
-			'MySQL',
-			'PHP',
-			'Report',
+		$GLOBALS['routes'] = array(
+			'General'   => 'Dashboard',
+			'WordPress' => 'Dashboard',
+			'Apache'    => 'Dashboard',
+			'MySQL'     => 'Dashboard',
+			'PHP'       => 'Dashboard',
+			'Report'    => 'Report',
 		);
 
 		// Current tab
-		$GLOBALS['tab'] = ( isset( $_GET['tab'] ) && in_array( $_GET['tab'], $GLOBALS['tabs'] ) ) ? $_GET['tab'] : $GLOBALS['tabs'][0];
+		$GLOBALS['route'] = ( isset( $_GET['tab'] ) && array_key_exists( $_GET['tab'], $GLOBALS['routes'] ) ) ? $_GET['tab'] : current( array_keys( $GLOBALS['routes'] ) );
 
-		// Route to correct Tab Controller
-		$class = '\RichJenks\WPServerInfo\Controllers\\' . $GLOBALS['tab'];
+		// Route to correct Controller
+		$controller = $GLOBALS['routes'][ $GLOBALS['route'] ];
+		$class = '\RichJenks\WPServerInfo\Controllers\\' . $controller;
 		new $class;
 
 	}

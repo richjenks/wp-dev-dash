@@ -34,20 +34,17 @@ class MySQL {
 		return array(
 
 			array(
-				'caption' => 'Database',
 				'data'    => array(
 					'Tables' => $this->count_rows( $this->get_tables() ),
 				),
 			),
 
 			array(
-				'caption' => 'Info',
 				'data'    => array(
 					'Client Version' => mysqli_get_client_version( $this->mysqli ),
 					'Host Info' => $this->mysqli->host_info,
 					'Client Info' => mysqli_get_client_info( $this->mysqli ),
 					'Status' => explode( '  ', mysqli_stat( $this->mysqli ) ),
-					'Client Stats' => mysqli_get_client_stats(),
 				),
 			),
 

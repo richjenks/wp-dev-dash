@@ -42,7 +42,7 @@ class Router {
 
 	public function route() {
 
-		// All tabs
+		// Maps tabs to Controllers
 		$GLOBALS['routes'] = array(
 			'General'   => 'Dashboard',
 			'WordPress' => 'Dashboard',

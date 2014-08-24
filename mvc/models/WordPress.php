@@ -37,7 +37,7 @@ class WordPress {
 			array(
 				'caption' => 'Plugins',
 				'data'    => array(
-					'Plugins' => get_option( 'active_plugins', '' ),
+					'Active' => $this->get_active_plugins(),
 				),
 			),
 
@@ -143,6 +143,18 @@ class WordPress {
 
 		return $config;
 
+	}
+
+	/**
+	 * get_active_plugins
+	 *
+	 * @return array Sorted list of active plugins
+	 */
+
+	private function get_active_plugins() {
+		$plugins = get_option( 'active_plugins', '' );
+		natcasesort( $plugins );
+		return $plugins;
 	}
 
 }

@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name: Server Info
- * Plugin URI: https://richjenks.com/dev/wp/server-info/
+ * Plugin URI: https://github.com/richjenks/wp-server-info/
  * Description: A page displaying server information for WordPress in Tools > Server
  * Version: 1.0
  * Author: Rich Jenks <rich@richjenks.com>

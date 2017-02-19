@@ -61,7 +61,6 @@ class General {
 					'Apache'    => $this->get_apache_version(),
 					'MySQL'     => $this->get_mysql_version(),
 					'PHP'       => phpversion(),
-					'Memcache'  => ( class_exists('Memcache') ) ? Memcache::getVersion() : false,
 				),
 			),
 

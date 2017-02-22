@@ -7,7 +7,7 @@
  * Extended by other Controllers
  */
 
-namespace RichJenks\WPServerInfo\Controllers;
+namespace RichJenks\WPServerDashboard\Controllers;
 
 class Controller {
 	protected function render( $view, $data = false ) {

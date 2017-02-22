@@ -4,7 +4,7 @@
  * View Helper
  */
 
-namespace RichJenks\WPServerInfo;
+namespace RichJenks\WPServerDashboard;
 
 class Helper {
 

@@ -6,7 +6,7 @@
  * Constructs MySQL data
  */
 
-namespace RichJenks\WPServerInfo\Models;
+namespace RichJenks\WPServerDashboard\Models;
 
 class MySQL {
 

@@ -4,25 +4,25 @@
  * Report Controller
  */
 
-namespace RichJenks\WPServerInfo\Controllers;
+namespace RichJenks\WPServerDashboard\Controllers;
 
 class Report extends Controller {
 
 	public function __construct() {
 
-		$general = new \RichJenks\WPServerInfo\Models\General;
+		$general = new \RichJenks\WPServerDashboard\Models\General;
 		$data['General'] = $general->get_data();
 
-		$wordpress = new \RichJenks\WPServerInfo\Models\WordPress;
+		$wordpress = new \RichJenks\WPServerDashboard\Models\WordPress;
 		$data['WordPress'] = $wordpress->get_data();
 
-		$apache = new \RichJenks\WPServerInfo\Models\Apache;
+		$apache = new \RichJenks\WPServerDashboard\Models\Apache;
 		$data['Apache'] = $apache->get_data();
 
-		$mysql = new \RichJenks\WPServerInfo\Models\MySQL;
+		$mysql = new \RichJenks\WPServerDashboard\Models\MySQL;
 		$data['MySQL'] = $mysql->get_data();
 
-		$php = new \RichJenks\WPServerInfo\Models\PHP;
+		$php = new \RichJenks\WPServerDashboard\Models\PHP;
 		$data['PHP'] = $php->get_data();
 
 		$this->render( 'Report', $data );

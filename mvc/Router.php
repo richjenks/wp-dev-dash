@@ -7,7 +7,7 @@
  * Registers menu page & sends the request to the appropriate Controller
  */
 
-namespace RichJenks\WPServerInfo;
+namespace RichJenks\WPServerDashboard;
 
 class Router {
 
@@ -21,13 +21,13 @@ class Router {
 
 		// Add submenu page
 		add_action( 'admin_menu', function() {
-			add_submenu_page( 'tools.php', 'Server Info', 'Server Info', 'manage_options', 'server-info', array( $this, 'route' ) );
+			add_submenu_page( 'tools.php', 'Server', 'Server', 'manage_options', 'server-dashboard', array( $this, 'route' ) );
 		} );
 
 		// Enqueue admin stylesheet
-		if ( isset( $_GET['page'] ) && $_GET['page'] === 'server-info' ) {
+		if ( isset( $_GET['page'] ) && $_GET['page'] === 'server-dashboard' ) {
 			add_action( 'admin_enqueue_scripts', function() {
-				wp_enqueue_style( 'devdash-styles', plugins_url( 'wp-server-info/mvc/assets/style.css' ) );
+				wp_enqueue_style( 'devdash-styles', plugins_url( 'wp-server-dashboard/mvc/assets/style.css' ) );
 			} );
 		}
 
@@ -57,7 +57,7 @@ class Router {
 
 		// Route to correct Controller
 		$controller = $GLOBALS['routes'][ $GLOBALS['route'] ];
-		$class = '\RichJenks\WPServerInfo\Controllers\\' . $controller;
+		$class = '\RichJenks\WPServerDashboard\Controllers\\' . $controller;
 		new $class;
 
 	}

@@ -6,7 +6,7 @@
  * Constructs Apache data
  */
 
-namespace RichJenks\WPServerInfo\Models;
+namespace RichJenks\WPServerDashboard\Models;
 
 class Apache {
 

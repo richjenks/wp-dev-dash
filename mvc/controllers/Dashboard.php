@@ -4,13 +4,13 @@
  * Dashboard Controller
  */
 
-namespace RichJenks\WPServerInfo\Controllers;
+namespace RichJenks\WPServerDashboard\Controllers;
 
 class Dashboard extends Controller {
 
 	public function __construct() {
 		$route = $GLOBALS['route'];
-		$class = '\RichJenks\WPServerInfo\Models\\' . $route;
+		$class = '\RichJenks\WPServerDashboard\Models\\' . $route;
 		$model = new $class;
 		$this->render( 'Dashboard', $model->get_data() );
 	}

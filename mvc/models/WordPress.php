@@ -6,7 +6,7 @@
  * Constructs WordPress data
  */
 
-namespace RichJenks\WPServerInfo\Models;
+namespace RichJenks\WPServerDashboard\Models;
 
 class WordPress {
 

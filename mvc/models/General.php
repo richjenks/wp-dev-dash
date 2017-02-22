@@ -6,7 +6,7 @@
  * Constructs General data
  */
 
-namespace RichJenks\WPServerInfo\Models;
+namespace RichJenks\WPServerDashboard\Models;
 
 class General {
 
@@ -47,9 +47,9 @@ class General {
 					'Hostname'      => $_SERVER['HTTP_HOST'],
 					'IP Address'    => $_SERVER['SERVER_ADDR'],
 					'Port'          => $_SERVER['SERVER_PORT'],
-					'Document Root' => \RichJenks\WPServerInfo\Helper::fix_separators( $_SERVER['DOCUMENT_ROOT'] ),
-					'php.ini'       => \RichJenks\WPServerInfo\Helper::fix_separators( php_ini_loaded_file() ),
-					'WordPress'     => \RichJenks\WPServerInfo\Helper::fix_separators( realpath( __DIR__ . '/../../../../../' ) ),
+					'Document Root' => \RichJenks\WPServerDashboard\Helper::fix_separators( $_SERVER['DOCUMENT_ROOT'] ),
+					'php.ini'       => \RichJenks\WPServerDashboard\Helper::fix_separators( php_ini_loaded_file() ),
+					'WordPress'     => \RichJenks\WPServerDashboard\Helper::fix_separators( realpath( __DIR__ . '/../../../../../' ) ),
 				),
 			),
 

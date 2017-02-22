@@ -6,7 +6,7 @@
  * Constructs PHP data
  */
 
-namespace RichJenks\WPServerInfo\Models;
+namespace RichJenks\WPServerDashboard\Models;
 
 class PHP {
 

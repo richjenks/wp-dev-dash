@@ -27,7 +27,7 @@ class Router {
 		// Enqueue admin stylesheet
 		if ( isset( $_GET['page'] ) && $_GET['page'] === 'server-dashboard' ) {
 			add_action( 'admin_enqueue_scripts', function() {
-				wp_enqueue_style( 'devdash-styles', plugins_url( 'wp-server-dashboard/mvc/assets/style.css' ) );
+				wp_enqueue_style( 'devdash-styles', plugins_url( 'wp-server-dashboard/plugin/assets/style.css' ) );
 			} );
 		}
 

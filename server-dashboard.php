@@ -12,7 +12,7 @@
 
 namespace RichJenks\WPServerDashboard;
 if ( !defined( 'DS' ) ) define ( 'DS', DIRECTORY_SEPARATOR );
-require __DIR__ . DS . 'mvc' . DS . 'Helper.php';
-require __DIR__ . DS . 'mvc' . DS . 'Autoloader.php';
-require __DIR__ . DS . 'mvc' . DS . 'Router.php';
+require __DIR__ . DS . 'plugin' . DS . 'Helper.php';
+require __DIR__ . DS . 'plugin' . DS . 'Autoloader.php';
+require __DIR__ . DS . 'plugin' . DS . 'Router.php';
 new Router;
